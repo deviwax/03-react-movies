@@ -7,6 +7,9 @@ interface TMDResponse {
 
 export async function fetchMovies(query: string): Promise<TMDResponse> {
     const token = import.meta.env.VITE_TMDB_TOKEN;
+
+    console.log("TMDB Token from env:", token);
+    
     if (!token) {
         throw new Error("TMDB token is not defined");
     }
